@@ -18,7 +18,7 @@ class CreateKasirsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('jenis_kelamin');
-            $table->integer('no_hp');
+            $table->string('no_hp');
             $table->text('alamat');
             $table->timestamps();
         });

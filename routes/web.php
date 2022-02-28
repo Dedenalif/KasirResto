@@ -54,9 +54,6 @@ Route::middleware(['auth', 'role:manajer'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:kasir'])->group(function () {
-    //Kasir Dashboard
-    Route::get('kasir/dashboard', 'Kasir\DashboardController@index')->name('kasir-dashboard');
-
     // Kasir Pesanan
     Route::get('pesanan', 'Kasir\PesananController@index')->name('pesanan');
     Route::post('pesanan/store', 'Kasir\PesananController@store')->name('pesanan-store');
@@ -65,6 +62,9 @@ Route::middleware(['auth', 'role:kasir'])->group(function () {
 
     //Kasir Transaksi
     Route::post('transaksi', 'Kasir\PesananController@transaksiStore')->name('transaksi-store');
+
+    //Kasir Catatan
+    Route::get('kasir/catatan', 'Kasir\CatatanController@index')->name('kasir-catatan');
 });
 
 Auth::routes();

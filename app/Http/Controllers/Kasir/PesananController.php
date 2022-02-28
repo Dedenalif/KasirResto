@@ -78,9 +78,7 @@ class PesananController extends Controller
             'jumlah_pembayaran.required' => 'Jumlah Pembayaran Wajib Diisi'
         ]);
 
-        $kasir = Kasir::join('users', 'users.id', '=', 'kasir.user_id')
-            ->select('kasir.id')
-            ->first();
+        $kasir = Kasir::where('user_id', Auth::user()->id)->first();
 
         $getPesanan = Pesanan::where('kasir_id', $kasir->id)->where('status', 'sedang_dipesan')->get();
         $pesanan = Pesanan::where('kasir_id', $kasir->id)->where('status', 'sedang_dipesan')->first()->latest()->max('id');
@@ -117,6 +115,7 @@ class PesananController extends Controller
         $transaksi = new Transaksi();
         $transaksi->kode = $kode . $pelanggan->id;
         $transaksi->pesanan_detail_id = $pesanan;
+        $transaksi->kasir_id = $kasir->id;
         $transaksi->total_bayar = $request->total_bayar;
         $transaksi->jumlah_pembayaran = $request->jumlah_pembayaran;
         if ($request->kembalian == '') {
