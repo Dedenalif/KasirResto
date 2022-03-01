@@ -17,6 +17,8 @@ class CreateTransakisTable extends Migration
             $table->id();
             $table->string('kode');
             $table->BigInteger('pesanan_detail_id');
+            $table->unsignedBigInteger('pelanggan_id');
+            $table->foreign('pelanggan_id')->references('id')->on('pelanggan')->onDelete('cascade');
             $table->unsignedBigInteger('kasir_id');
             $table->foreign('kasir_id')->references('id')->on('kasir')->onDelete('cascade');
             $table->string('total_bayar');

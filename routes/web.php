@@ -51,6 +51,12 @@ Route::middleware(['auth', 'role:manajer'])->group(function () {
     Route::post('menu/{id}/update', 'Manajer\MenuController@update')->name('menu-update');
     Route::get('menu/{id}/delete', 'Manajer\MenuController@delete')->name('menu-delete');
     Route::get('status/{id}/edit', 'Manajer\MenuController@status')->name('menu-status');
+
+    //Manajer Catatan
+    Route::get('manajer/catatan', 'Manajer\CatatanController@index')->name('manajer-catatan');
+
+    //Manajer Filter
+    Route::get('manajer/catatan/filter/', 'Manajer\CatatanController@filter')->name('manajer-filter');
 });
 
 Route::middleware(['auth', 'role:kasir'])->group(function () {

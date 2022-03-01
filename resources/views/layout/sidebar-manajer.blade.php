@@ -14,5 +14,10 @@
                 <li><a href="{{ route('minuman') }}">Minuman</a></li>
             </ul>
         </li>
+        <li><a href="{{ route('manajer-catatan') }}" aria-expanded="false">
+                <i class="flaticon-381-networking"></i>
+                <span class="nav-text">Catatan</span>
+            </a>
+        </li>
     </ul>
 </div>

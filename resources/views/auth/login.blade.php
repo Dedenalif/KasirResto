@@ -36,7 +36,7 @@
                                         @csrf
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" name="email">
+                                            <input type="email" class="form-control" name="email" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Password</strong></label>

@@ -115,6 +115,7 @@ class PesananController extends Controller
         $transaksi = new Transaksi();
         $transaksi->kode = $kode . $pelanggan->id;
         $transaksi->pesanan_detail_id = $pesanan;
+        $transaksi->pelanggan_id = $pelanggan->id;
         $transaksi->kasir_id = $kasir->id;
         $transaksi->total_bayar = $request->total_bayar;
         $transaksi->jumlah_pembayaran = $request->jumlah_pembayaran;

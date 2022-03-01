@@ -19,20 +19,24 @@
                                 aria-describedby="example_info">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>Kode</th>
-                                        <th>Total Pembayaran</th>
+                                        <th>Pelanggan</th>
+                                        <th>Total</th>
                                         <th>Jumlah Bayar</th>
-                                        <th>Kembalian</th>
                                         <th>Tanggal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $dt)
                                         <tr>
-                                            <td>{{ $dt->kode }}</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                <span class="badge badge-primary">{{ $dt->kode }}</span>
+                                            </td>
+                                            <td>{{ $dt->nama }}</td>
                                             <td>Rp. {{ number_format($dt->total_bayar, 0) }}</td>
                                             <td>Rp. {{ number_format($dt->jumlah_pembayaran, 0) }}</td>
-                                            <td>Rp. {{ number_format($dt->kembalian, 0) }}</td>
                                             <td>{{ $dt->tgl_transaksi }}</td>
                                         </tr>
                                     @endforeach
