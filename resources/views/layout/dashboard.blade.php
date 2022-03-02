@@ -30,11 +30,9 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="{{ asset('template/images/logo.png') }}" alt="">
-                <img class="logo-compact" src="{{ asset('template/images/logo-text.png') }}" alt="">
-                <img class="brand-title" src="{{ asset('template/images/logo-text.png') }}" alt="">
-            </a>
+            {{-- <a href="#" class="brand-logo">
+             <h2 class="text-center"> Kasir Restoran </h2>
+            </a> --}}
 
             <div class="nav-control">
                 <div class="hamburger">
@@ -61,7 +59,7 @@
             Sidebar start
         ***********************************-->
         <div class="deznav">
-            @include('layout.sidebar-admin')
+            @include('layout.sidebar')
         </div>
         <!--**********************************
             Sidebar end

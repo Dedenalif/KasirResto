@@ -28,10 +28,7 @@
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
-                                    <div class="text-center mb-3">
-                                        <a href="index.html"><img src="images/logo-full.png" alt=""></a>
-                                    </div>
-                                    <h4 class="text-center mb-4">Login</h4>
+                                    <h3 class="text-center mb-5">Login</h3>
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
