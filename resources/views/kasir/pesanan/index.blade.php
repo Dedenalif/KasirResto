@@ -1,4 +1,4 @@
-@extends('kasir.dashboard')
+@extends('layout.dashboard')
 @section('content')
     <div class="row">
         @if ($pesanan->count() != '')

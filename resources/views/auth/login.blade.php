@@ -33,13 +33,24 @@
                                         @csrf
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" name="email" autocomplete="off">
+                                            <input type="email"
+                                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                                autocomplete="off">
+                                            @error('email')
+                                                <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" name="password">
+                                            <input type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password">
+                                            @error('password')
+                                                <div class="invalid-feedback">{{ $errors->first('password') }}</div>
+                                            @enderror
                                         </div>
-                                        <div class="text-center">
+                                        <div class="
+                                                text-center">
                                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                                         </div>
                                     </form>

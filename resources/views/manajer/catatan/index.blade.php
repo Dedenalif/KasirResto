@@ -1,4 +1,4 @@
-@extends('manajer.dashboard')
+@extends('layout.dashboard')
 @section('content')
     @push('css')
         <!-- Datatable -->

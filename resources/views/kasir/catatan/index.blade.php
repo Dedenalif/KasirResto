@@ -1,4 +1,4 @@
-@extends('kasir.dashboard')
+@extends('layout.dashboard')
 @section('content')
     @push('css')
         <!-- Datatable -->
