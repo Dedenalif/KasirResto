@@ -55,8 +55,12 @@ Route::middleware(['auth', 'role:manajer'])->group(function () {
     //Manajer Catatan
     Route::get('manajer/catatan', 'Manajer\CatatanController@index')->name('manajer-catatan');
 
+    //Manajer Laporan
+    Route::get('manajer/pendapatan', 'Manajer\PendapatanController@index')->name('manajer-pendapatan');
+
     //Manajer Filter
-    Route::get('manajer/catatan/filter/', 'Manajer\CatatanController@filter')->name('manajer-filter');
+    Route::get('manajer/catatan/filter/', 'Manajer\CatatanController@filter')->name('filter-catatan');
+    Route::get('manajer/pendapatan/filter', 'Manajer\PendapatanController@filter')->name('filter-pendapatan');
 });
 
 Route::middleware(['auth', 'role:kasir'])->group(function () {

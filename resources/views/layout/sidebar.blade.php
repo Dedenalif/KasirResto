@@ -23,7 +23,7 @@
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
             <li><a href="{{ route('pesanan') }}" aria-expanded="false">
-                    <i class="flaticon-381-networking"></i>
+                    <i class="fas fa-shop"></i>
                     <span class="nav-text">Pesanan</span>
                 </a>
             </li>
@@ -56,6 +56,11 @@
             <li><a href="{{ route('manajer-catatan') }}" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Catatan</span>
+                </a>
+            </li>
+            <li><a href="{{ route('manajer-pendapatan') }}" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Pendapatan</span>
                 </a>
             </li>
         </ul>

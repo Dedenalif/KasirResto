@@ -8,20 +8,35 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <form action="{{ route('filter-catatan') }}" method="GET">
-                        <h4 class="card-title mb-5">Filter Transaksi</h4>
+                    <form action="{{ route('filter-pendapatan') }}" method="GET">
+                        <h4 class="card-title mb-5">Filter Pendapatan</h4>
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <label>Dari tanngal</label>
-                                <input type="date" name="dari_tgl" class="form-control">
+                                <input type="date" name="dari_tgl"
+                                    class="form-control @error('dari_tgl') is-invalid @enderror">
+                                @error('dari_tgl')
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('dari_tgl') }}
+                                    </div>
+                                @enderror
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <label>Sampai tanggal</label>
-                                <input type="date" name="sampai_tgl" class="form-control">
+                                <input type="date" name="sampai_tgl"
+                                    class="form-control @error('sampai_tgl') is-invalid @enderror">
+                                @error('sampai_tgl')
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('sampai_tgl') }}
+                                    </div>
+                                @enderror
                             </div>
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-primary mt-4">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary mt-4" name="cari" value="cari">
                                     <i class="fas fa-search"></i>
+                                </button>
+                                <button type="submit" class="btn btn-warning mt-4" name="cetak" value="cetak">
+                                    <i class="fas fa-print"></i>
                                 </button>
                             </div>
                         </div>
@@ -35,20 +50,16 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kasir</th>
-                                        <th>Pelanggan</th>
-                                        <th>Total</th>
                                         <th>Tanggal</th>
+                                        <th>Pendapatan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $dt)
+                                    @foreach ($pendapatan as $dt)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $dt->k_nama }}</td>
-                                            <td>{{ $dt->p_nama }}</td>
-                                            <td>Rp. {{ number_format($dt->total_bayar, 0) }}</td>
-                                            <td>{{ $dt->tgl_transaksi }}</td>
+                                            <td>{{ $dt->day }}</td>
+                                            <td>Rp. {{ number_format($dt->pendapatan, 0) }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

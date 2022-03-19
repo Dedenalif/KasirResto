@@ -30,9 +30,9 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            {{-- <a href="#" class="brand-logo">
-             <h2 class="text-center"> Kasir Restoran </h2>
-            </a> --}}
+            <a href="#" class="brand-logo justify-content-center">
+                <h5>Kasir Cafe</h5>
+            </a>
 
             <div class="nav-control">
                 <div class="hamburger">
