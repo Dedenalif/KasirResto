@@ -1,5 +1,4 @@
-@extends('layout.dashboard')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="me-auto d-none d-lg-block">
         <h2 class="text-primary font-w600 mb-0">Dashboard</h2>
     </div>
@@ -18,7 +17,7 @@
 
                         </span>
                         <div class="media-body">
-                            <h3 class="mb-0 text-black"><span class="counter ms-0">{{ $menu->count() }}</span></h3>
+                            <h3 class="mb-0 text-black"><span class="counter ms-0"><?php echo e($menu->count()); ?></span></h3>
                             <p class="mb-0">Total Menu</p>
                         </div>
                     </div>
@@ -44,7 +43,7 @@
                             </svg>
                         </span>
                         <div class="media-body">
-                            <h3 class="mb-0 text-black"><span class="counter ms-0">{{ $kasir->count() }}</span></h3>
+                            <h3 class="mb-0 text-black"><span class="counter ms-0"><?php echo e($kasir->count()); ?></span></h3>
                             <p class="mb-0">Total Kasir</p>
                         </div>
                     </div>
@@ -65,7 +64,7 @@
                         </span>
                         <div class="media-body">
                             <h3 class="mb-0 text-black"><span
-                                    class="counter ms-0">{{ number_format($pendapatan->sum('total_bayar'), 0) }}</h3>
+                                    class="counter ms-0"><?php echo e(number_format($pendapatan->sum('total_bayar'), 0)); ?></h3>
                             <p class="mb-0">Total Pendapatan</p>
                         </div>
                     </div>
@@ -73,4 +72,6 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\ujikom\resources\views/manajer/dashboard-manajer.blade.php ENDPATH**/ ?>

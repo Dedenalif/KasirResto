@@ -61,6 +61,9 @@ Route::middleware(['auth', 'role:manajer'])->group(function () {
     //Manajer Filter
     Route::get('manajer/catatan/filter/', 'Manajer\CatatanController@filter')->name('filter-catatan');
     Route::get('manajer/pendapatan/filter', 'Manajer\PendapatanController@filter')->name('filter-pendapatan');
+
+    //Log Aktifitas
+    Route::get('manajer/log', 'Manajer\LogController@index')->name('log-aktifitas');
 });
 
 Route::middleware(['auth', 'role:kasir'])->group(function () {
@@ -80,6 +83,11 @@ Route::middleware(['auth', 'role:kasir'])->group(function () {
 Auth::routes();
 
 Route::get('logout', function () {
+    if (auth()->user()->roles()->pluck('name')->implode(',') == "kasir") {
+        activity()
+            ->causedBy(auth()->user()->id)
+            ->log('Pengguna telah keluar');
+    }
     Auth::logout();
     return redirect('login');
 });

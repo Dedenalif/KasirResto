@@ -1,17 +1,16 @@
-@extends('layout.dashboard')
-@section('content')
-    @push('css')
+<?php $__env->startSection('content'); ?>
+    <?php $__env->startPush('css'); ?>
         <!-- Datatable -->
-        <link href="{{ asset('template/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-    @endpush
+        <link href="<?php echo e(asset('template/vendor/datatables/css/jquery.dataTables.min.css')); ?>" rel="stylesheet">
+    <?php $__env->stopPush(); ?>
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
-                        Minuman
+                        Manajer
                     </div>
-                    <a href="{{ route('menu-add') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                    <a href="<?php echo e(route('manajer-add')); ?>" class="btn btn-primary btn-sm">Tambah Manajer</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -20,42 +19,26 @@
                                 aria-describedby="example_info">
                                 <thead>
                                     <tr>
-                                        <th>Gambar</th>
                                         <th>Nama</th>
-                                        <th>Kategori</th>
-                                        <th>Harga</th>
+                                        <th>Email</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $dt)
+                                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dt): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
+                                            <td><?php echo e($dt->name); ?></td>
+                                            <td><?php echo e($dt->email); ?></td>
                                             <td>
-                                                <img src="{{ asset('manajer/menu/' . $dt->gambar) }}"
-                                                    style="width: 200px;">
-                                            </td>
-                                            <td>{{ $dt->nama }}</td>
-                                            <td>{{ $dt->kategori }}</td>
-                                            <td>Rp. {{ number_format($dt->harga, 0) }}</td>
-                                            <td>
-                                                <a href="{{ url('menu/' . $dt->id . '/edit') }}"
+                                                <a href="<?php echo e(url('manajer/' . $dt->m_id . '/edit')); ?>"
                                                     class="btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
                                                 <a href="javascript:void(0);" class="btn btn-danger btn-sm delete"
-                                                    data-id="{{ $dt->id }}" data-name="{{ $dt->nama }}">
+                                                    data-id="<?php echo e($dt->m_id); ?>" data-name="<?php echo e($dt->name); ?>">
                                                     <i class="fa fa-trash"></i>
-                                                </a><br>
-                                                @if ($dt->status == 'tersedia')
-                                                    <a href="{{ url('status/' . $dt->id . '/edit') }}"
-                                                        class="btn btn-success btn-sm mt-3">Tersedia
-                                                    </a>
-                                                @else
-                                                    <a href="{{ url('status/' . $dt->id . '/edit') }}"
-                                                        class="btn btn-warning btn-sm mt-3">Habis
-                                                    </a>
-                                                @endif
+                                                </a>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
                         </div>
@@ -64,12 +47,12 @@
             </div>
         </div>
     </div>
-    @push('js')
+    <?php $__env->startPush('js'); ?>
         <!-- Datatable -->
-        <script src="{{ asset('template/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('template/js/plugins-init/datatables.init.js') }}"></script>
+        <script src="<?php echo e(asset('template/vendor/datatables/js/jquery.dataTables.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('template/js/plugins-init/datatables.init.js')); ?>"></script>
 
-        {{-- Delete confirmation --}}
+        
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             $(".table").on("click", ".delete", function() {
@@ -85,14 +68,16 @@
                     })
                     .then((willDelete) => {
                         if (willDelete) {
-                            window.location.href = "menu/" + dataId + "/delete"
+                            window.location.href = "manajer/" + dataId + "/delete"
                         } else {
                             swal("Gagal menghapus data");
                         }
                     });
             });
         </script>
-    @endpush
+    <?php $__env->stopPush(); ?>
 
-    @include('sweetalert::alert')
-@endsection
+    <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\ujikom\resources\views/admin/manajer/index.blade.php ENDPATH**/ ?>

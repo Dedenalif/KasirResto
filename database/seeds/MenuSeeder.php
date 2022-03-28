@@ -12,52 +12,54 @@ class MenuSeeder extends Seeder
      */
     public function run()
     {
+        //Minuman
         Menu::create([
-            'nama' => 'Burger',
-            'kategori' => 'makanan',
+            'nama' => 'Yogurt Stroberi',
+            'kategori' => 'minuman',
+            'harga' => '20000',
+            'status' => 'tersedia',
+            'gambar' => 'yogurt_stroberi.jpg'
+        ]);
+
+        Menu::create([
+            'nama' => 'Matcha Latte',
+            'kategori' => 'minuman',
             'harga' => '25000',
             'status' => 'tersedia',
-            'gambar' => 'burger.jpg'
+            'gambar' => 'matcha_latte.jpg'
         ]);
 
         Menu::create([
-            'nama' => 'Coklat Panas',
+            'nama' => 'Latte Capucino',
             'kategori' => 'minuman',
-            'harga' => '7000',
+            'harga' => '15000',
             'status' => 'tersedia',
-            'gambar' => 'coklat_panas.jpg'
+            'gambar' => 'latte_capucino.jpg'
         ]);
 
+        //Makanan
         Menu::create([
-            'nama' => 'Daging Protein',
+            'nama' => 'Nachos',
             'kategori' => 'makanan',
             'harga' => '30000',
             'status' => 'tersedia',
-            'gambar' => 'daging_protein.jpg'
+            'gambar' => 'nachos.jpg'
         ]);
 
         Menu::create([
-            'nama' => 'Jeruk Nipis',
-            'kategori' => 'minuman',
-            'harga' => '10000',
-            'status' => 'tersedia',
-            'gambar' => 'jeruk_nipis.jpg'
-        ]);
-
-        Menu::create([
-            'nama' => 'Salmon',
+            'nama' => 'Onion Ring',
             'kategori' => 'makanan',
             'harga' => '20000',
             'status' => 'tersedia',
-            'gambar' => 'salmon.jpg'
+            'gambar' => 'onion_ring.jpg'
         ]);
 
         Menu::create([
-            'nama' => 'Teh',
-            'kategori' => 'minuman',
-            'harga' => '5000',
+            'nama' => 'Stroberi Cake',
+            'kategori' => 'makanan',
+            'harga' => '25000',
             'status' => 'tersedia',
-            'gambar' => 'teh.jpg'
+            'gambar' => 'stroberi_cake.jpg'
         ]);
     }
 }

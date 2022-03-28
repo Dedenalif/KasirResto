@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -13,6 +14,11 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // protected function schedule(Schedule $schedule)
+    // {
+    //     $schedule->command('activitylog:clean')->daily();
+    // }
+
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,

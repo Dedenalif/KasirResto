@@ -14,7 +14,7 @@ class PendapatanController extends Controller
     {
         $pendapatan = Transaksi::select([
             DB::raw("DATE_FORMAT(tgl_transaksi, '%Y-%m-%d') as day"),
-            DB::raw("sum(jumlah_pembayaran) as pendapatan")
+            DB::raw("sum(total_bayar) as pendapatan")
         ])
             ->groupBy('day')
             ->orderBy('day', "ASC")
