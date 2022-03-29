@@ -129,7 +129,8 @@ unset($__errorArgs, $__bag); ?>
                         <div class="card-body">
                             <div class="new-arrival-product">
                                 <div class="new-arrivals-img-contnent">
-                                    <img class="img-fluid" src="<?php echo e(asset('manajer/menu/' . $mk->gambar)); ?>" alt="">
+                                    <img class="img-fluid" src="<?php echo e(asset('manajer/menu/' . $mk->gambar)); ?>"
+                                        style="width: 200px;">
                                 </div>
                                 <div class="new-arrival-content text-center mt-3">
                                     <h4><?php echo e($mk->nama); ?></h4>
@@ -176,7 +177,8 @@ unset($__errorArgs, $__bag); ?>
                         <div class="card-body">
                             <div class="new-arrival-product">
                                 <div class="new-arrivals-img-contnent">
-                                    <img class="img-fluid" src="<?php echo e(asset('manajer/menu/' . $mm->gambar)); ?>" alt="">
+                                    <img class="img-fluid" src="<?php echo e(asset('manajer/menu/' . $mm->gambar)); ?>"
+                                        style="width: 200px;">
                                 </div>
                                 <div class="new-arrival-content text-center mt-3">
                                     <h4><?php echo e($mm->nama); ?></h4>

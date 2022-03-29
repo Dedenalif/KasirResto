@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 Route::middleware(['auth', 'role:admin'])->group(function () {
     //Admin Dashboard
@@ -36,6 +36,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('manajer/{id}/edit', 'Admin\ManajerController@edit')->name('manajer-edit');
     Route::post('manajer/{id}/update', 'Admin\ManajerController@update')->name('manajer-update');
     Route::get('admin/manajer/{id}/delete', 'Admin\ManajerController@delete')->name('manajer-delete');
+
+    //Log Aktifitas
+    Route::get('admin/log', 'Manajer\LogController@index')->name('admin-log');
 });
 
 Route::middleware(['auth', 'role:manajer'])->group(function () {
@@ -63,7 +66,7 @@ Route::middleware(['auth', 'role:manajer'])->group(function () {
     Route::get('manajer/pendapatan/filter', 'Manajer\PendapatanController@filter')->name('filter-pendapatan');
 
     //Log Aktifitas
-    Route::get('manajer/log', 'Manajer\LogController@index')->name('log-aktifitas');
+    Route::get('manajer/log', 'Manajer\LogController@index')->name('manajer-log');
 });
 
 Route::middleware(['auth', 'role:kasir'])->group(function () {

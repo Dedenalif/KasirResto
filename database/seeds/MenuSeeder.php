@@ -41,23 +41,23 @@ class MenuSeeder extends Seeder
         Menu::create([
             'nama' => 'Nachos',
             'kategori' => 'makanan',
-            'harga' => '30000',
+            'harga' => '25000',
             'status' => 'tersedia',
             'gambar' => 'nachos.jpg'
         ]);
 
         Menu::create([
-            'nama' => 'Onion Ring',
+            'nama' => 'Burger',
             'kategori' => 'makanan',
-            'harga' => '20000',
+            'harga' => '30000',
             'status' => 'tersedia',
-            'gambar' => 'onion_ring.jpg'
+            'gambar' => 'burger.jpg'
         ]);
 
         Menu::create([
             'nama' => 'Stroberi Cake',
             'kategori' => 'makanan',
-            'harga' => '25000',
+            'harga' => '20000',
             'status' => 'tersedia',
             'gambar' => 'stroberi_cake.jpg'
         ]);

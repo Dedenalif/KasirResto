@@ -101,7 +101,8 @@
                         <div class="card-body">
                             <div class="new-arrival-product">
                                 <div class="new-arrivals-img-contnent">
-                                    <img class="img-fluid" src="{{ asset('manajer/menu/' . $mk->gambar) }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('manajer/menu/' . $mk->gambar) }}"
+                                        style="width: 200px;">
                                 </div>
                                 <div class="new-arrival-content text-center mt-3">
                                     <h4>{{ $mk->nama }}</h4>
@@ -147,7 +148,8 @@
                         <div class="card-body">
                             <div class="new-arrival-product">
                                 <div class="new-arrivals-img-contnent">
-                                    <img class="img-fluid" src="{{ asset('manajer/menu/' . $mm->gambar) }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('manajer/menu/' . $mm->gambar) }}"
+                                        style="width: 200px;">
                                 </div>
                                 <div class="new-arrival-content text-center mt-3">
                                     <h4>{{ $mm->nama }}</h4>

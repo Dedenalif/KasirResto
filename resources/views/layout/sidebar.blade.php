@@ -15,6 +15,11 @@
                     <li><a href="{{ route('admin-kasir') }}">Kasir</a></li>
                 </ul>
             </li>
+            <li><a href="{{ route('admin-log') }}" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Log Aktifitas</span>
+                </a>
+            </li>
         </ul>
     </div>
 @endrole
@@ -63,7 +68,7 @@
                     <span class="nav-text">Pendapatan</span>
                 </a>
             </li>
-            <li><a href="{{ route('log-aktifitas') }}" aria-expanded="false">
+            <li><a href="{{ route('manajer-log') }}" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Log Aktifitas</span>
                 </a>
