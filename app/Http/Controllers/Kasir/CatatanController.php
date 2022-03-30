@@ -15,6 +15,7 @@ class CatatanController extends Controller
             ->join('pelanggan', 'pelanggan.id', '=', 'pelanggan_id')
             ->select('pelanggan.nama', 'kasir.user_id', 'transaksi.*')
             ->where('user_id', Auth::user()->id)
+            ->orderBy('created_at', 'desc')
             ->get();
         // dd($data);
 

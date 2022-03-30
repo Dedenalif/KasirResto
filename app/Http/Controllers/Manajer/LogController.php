@@ -11,7 +11,8 @@ class LogController extends Controller
     public function index()
     {
         $data = Activity::join('users', 'users.id', '=', 'causer_id')
-            ->select('activity_log.created_at as tgl_activity', 'users.name', 'activity_log.description')
+            ->select('activity_log.created_at as tgl_activity', 'activity_log.description', 'users.name')
+            ->latest('tgl_activity')
             ->get();
         // dd($data);
         return view('log.index', compact('data'));

@@ -22,7 +22,6 @@
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>No Hp</th>
                                         <th>Alamat</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -33,7 +32,6 @@
                                             <td><?php echo e($dt->name); ?></td>
                                             <td><?php echo e($dt->email); ?></td>
                                             <td><?php echo e($dt->jenis_kelamin); ?></td>
-                                            <td><?php echo e($dt->no_hp); ?></td>
                                             <td><?php echo e($dt->alamat); ?></td>
                                             <td>
                                                 <a href="<?php echo e(url('kasir/' . $dt->k_id . '/edit')); ?>"

@@ -31,7 +31,7 @@
         ***********************************-->
         <div class="nav-header">
             <a href="#" class="brand-logo justify-content-center">
-                <h5>Kasir Cafe</h5>
+                <h6>Kasir Cafe</h6>
             </a>
 
             <div class="nav-control">

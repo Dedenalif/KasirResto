@@ -23,7 +23,6 @@
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>No Hp</th>
                                         <th>Alamat</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -34,7 +33,6 @@
                                             <td>{{ $dt->name }}</td>
                                             <td>{{ $dt->email }}</td>
                                             <td>{{ $dt->jenis_kelamin }}</td>
-                                            <td>{{ $dt->no_hp }}</td>
                                             <td>{{ $dt->alamat }}</td>
                                             <td>
                                                 <a href="{{ url('kasir/' . $dt->k_id . '/edit') }}"

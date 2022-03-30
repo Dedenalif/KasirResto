@@ -64,7 +64,7 @@ class KasirController extends Controller
             'alamat' => $request->alamat
         ]);
 
-        return redirect()->route('admin-kasir')->with('toast_success', 'Data berhasil di tambahkan');;
+        return redirect()->route('admin-kasir')->with('toast_success', 'Data berhasil di tambahkan');
     }
 
     public function edit($id)
