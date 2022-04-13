@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama</label>
                             <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror"
-                                id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off">
+                                id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off" value="{{ old('nama') }}">
                             @error('nama')
                                 <div class="invalid-feedback">* {{ $errors->first('nama') }}</div>
                             @enderror
@@ -35,7 +35,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text">Rp.</span>
                             <input type="text" name="harga"
-                                class="form-control @error('harga') is-invalid @enderror" autocomplete="off"">
+                                class="form-control @error('harga') is-invalid @enderror" autocomplete="off" value="{{ old("harga") }}">
                             @error('harga')
                                 <div class="invalid-feedback">* {{ $errors->first('harga') }}</div>
                             @enderror

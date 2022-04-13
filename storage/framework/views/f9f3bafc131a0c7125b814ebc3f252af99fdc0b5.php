@@ -7,7 +7,7 @@
                         <div class="row">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-muted">Detail Pesanan</span>
-                                <span class="badge badge-primary badge-pill"><?php echo e($pesanan->sum('qty')); ?></span>
+                                <span class="badge badge-primary badge-pill"><?php echo e($total->sum('qty')); ?></span>
                             </h4>
                             <ul class="list-group mb-3">
                                 <?php $__currentLoopData = $pesanan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ps): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -38,10 +38,12 @@
                                         </form>
                                     </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php echo e($pesanan->links()); ?>
+
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total</span>
-                                    <strong id="total" data-total="<?php echo e($pesanan->sum('sub_total')); ?>">Rp.
-                                        <?php echo e(number_format($pesanan->sum('sub_total', 0))); ?></strong>
+                                    <strong id="total" data-total="<?php echo e($total->sum('sub_total')); ?>">Rp.
+                                        <?php echo e(number_format($total->sum('sub_total', 0))); ?></strong>
                                 </li>
                             </ul>
                         </div>
@@ -57,7 +59,7 @@
                         <form action="<?php echo e(route('transaksi-store')); ?>" method="POST">
                             <?php echo csrf_field(); ?>
                             <div class="form-group">
-                                <input type="hidden" name="total_bayar" value="<?php echo e($pesanan->sum('sub_total')); ?>">
+                                <input type="hidden" name="total_bayar" value="<?php echo e($total->sum('sub_total')); ?>">
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Pelanggan : </label>

@@ -15,7 +15,7 @@
                             <label for="exampleInputEmail1">Nama</label>
                             <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror"
                                 id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off"
-                                value="{{ $dt->nama }}">
+                                value="{{ old('nama',$dt->nama) }}">
                             @error('nama')
                                 <div class="invalid-feedback">* {{ $errors->first('nama') }}</div>
                             @enderror
@@ -36,7 +36,7 @@
                             <span class="input-group-text">Rp.</span>
                             <input type="text" name="harga" id="harga"
                                 class="form-control @error('harga') is-invalid @enderror" autocomplete="off"
-                                value="{{ $dt->harga }}">
+                                value="{{ old('harga',$dt->harga) }}">
                             @error('harga')
                                 <div class="invalid-feedback">* {{ $errors->first('harga') }}</div>
                             @enderror

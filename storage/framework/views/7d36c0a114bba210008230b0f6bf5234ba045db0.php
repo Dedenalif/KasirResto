@@ -22,7 +22,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                                 id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off"
-                                value="<?php echo e($dt->name); ?>">
+                                value="<?php echo e(old('name',$dt->name)); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -45,7 +45,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                                 id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off"
-                                value="<?php echo e($dt->email); ?>">
+                                value="<?php echo e(old('email',$dt->email)); ?>">
                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

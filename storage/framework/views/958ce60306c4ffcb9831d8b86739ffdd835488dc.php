@@ -13,7 +13,7 @@
                         <input type="hidden" name="user_id" value="<?php echo e($dt->user_id); ?>" id="">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama</label>
-                            <input type="text" name="name" class="form-control <?php $__errorArgs = ['nama'];
+                            <input type="text" name="name" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -21,7 +21,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo e($dt->name); ?>">
+                                id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo e(old('name', $dt->name)); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -43,7 +43,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                id="exampleInputPassword1" value="<?php echo e($dt->email); ?>">
+                                id="exampleInputPassword1" value="<?php echo e(old('email', $dt->email)); ?>">
                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -67,9 +67,9 @@ endif;
 unset($__errorArgs, $__bag); ?>" name="jenis_kelamin"
                                 id="exampleFormControlSelect1">
                                 <option selected disabled>---Pilih Jenis Kelamin---</option>
-                                <option value="Laki-laki" <?php echo e(($dt->jenis_kelamin) == 'Laki-laki' ? 'selected' : ''); ?>>
+                                <option value="Laki-laki" <?php echo e(($dt->jenis_kelamin == 'Laki-laki') ? 'selected' : ''); ?>>
                                     Laki-laki</option>
-                                <option value="Perempuan" <?php echo e(($dt->perempuan) == 'Perempuan' ? 'selected' : ''); ?>>
+                                <option value="Perempuan" <?php echo e(($dt->jenis_kelamin == 'Perempuan') ? 'selected' : ''); ?>>
                                     Perempuan</option>
                             </select>
                             <?php $__errorArgs = ['jenis_kelamin'];
@@ -93,7 +93,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                id="exampleInputPassword1" value="<?php echo e($dt->no_hp); ?>">
+                                id="exampleInputPassword1" value="<?php echo e(old('no_hp', $dt->no_hp)); ?>">
                             <?php $__errorArgs = ['no_hp'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -114,8 +114,8 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="alamat"
-                                id="exampleFormControlTextarea1" rows="3"><?php echo e($dt->alamat); ?></textarea>
+unset($__errorArgs, $__bag); ?>" name="alamat" id="exampleFormControlTextarea1"
+                                rows="3"><?php echo e(old('alamat', $dt->alamat)); ?></textarea>
                             <?php $__errorArgs = ['alamat'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

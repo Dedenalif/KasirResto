@@ -31,11 +31,17 @@ class PesananController extends Controller
             ->join('menu', 'menu.id', 'pesanan.menu_id')
             ->select('pesanan.id as ps_id', 'pesanan.*', 'menu.*')
             ->where('pesanan.status', 'sedang_dipesan')
+            ->paginate(3);
+
+        $total = DB::table('pesanan')
+            ->join('menu', 'menu.id', 'pesanan.menu_id')
+            ->select('pesanan.id as ps_id', 'pesanan.*', 'menu.*')
+            ->where('pesanan.status', 'sedang_dipesan')
             ->get();
 
         $kasir = Kasir::where('user_id', Auth::user()->id)->first();
 
-        return view('kasir.pesanan.index', compact('makanan', 'minuman', 'pesanan', 'kasir'));
+        return view('kasir.pesanan.index', compact('makanan', 'minuman', 'pesanan', 'kasir','total'));
     }
 
     public function store(Request $request)

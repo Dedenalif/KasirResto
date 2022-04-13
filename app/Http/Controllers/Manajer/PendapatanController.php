@@ -40,7 +40,7 @@ class PendapatanController extends Controller
         if (isset($request->cari)) {
             $pendapatan = Transaksi::select([
                 DB::raw("DATE_FORMAT(tgl_transaksi, '%Y-%m-%d') as day"),
-                DB::raw("sum(jumlah_pembayaran) as pendapatan")
+                DB::raw("sum(total_bayar) as pendapatan")
             ])
                 ->whereBetween('tgl_transaksi', [$request->dari_tgl, $request->sampai_tgl])
                 ->groupBy('day')
@@ -55,7 +55,7 @@ class PendapatanController extends Controller
         if (isset($request->cetak)) {
             $pendapatan = Transaksi::select([
                 DB::raw("DATE_FORMAT(tgl_transaksi, '%Y-%m-%d') as day"),
-                DB::raw("sum(jumlah_pembayaran) as pendapatan")
+                DB::raw("sum(total_bayar) as pendapatan")
             ])
                 ->whereBetween('tgl_transaksi', [$request->dari_tgl, $request->sampai_tgl])
                 ->groupBy('day')

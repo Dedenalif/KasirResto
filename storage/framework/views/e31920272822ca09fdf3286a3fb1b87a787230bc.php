@@ -28,7 +28,8 @@
                                         <tr>
                                             <td><?php echo e($dt->name); ?></td>
                                             <td><?php echo e($dt->description); ?></td>
-                                            <td><?php echo e(date('H:i:s', strtotime($dt->tgl_activity))); ?></td>
+                                            <td><?php echo e(date('d-M-Y, H:i:s', strtotime($dt->tgl_activity))); ?></td>
+                                            </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>

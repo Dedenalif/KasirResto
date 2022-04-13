@@ -8,7 +8,7 @@
                         <div class="row">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-muted">Detail Pesanan</span>
-                                <span class="badge badge-primary badge-pill">{{ $pesanan->sum('qty') }}</span>
+                                <span class="badge badge-primary badge-pill">{{ $total->sum('qty') }}</span>
                             </h4>
                             <ul class="list-group mb-3">
                                 @foreach ($pesanan as $ps)
@@ -39,10 +39,11 @@
                                         </form>
                                     </li>
                                 @endforeach
+                                {{ $pesanan->links() }}
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total</span>
-                                    <strong id="total" data-total="{{ $pesanan->sum('sub_total') }}">Rp.
-                                        {{ number_format($pesanan->sum('sub_total', 0)) }}</strong>
+                                    <strong id="total" data-total="{{ $total->sum('sub_total') }}">Rp.
+                                        {{ number_format($total->sum('sub_total', 0)) }}</strong>
                                 </li>
                             </ul>
                         </div>
@@ -58,7 +59,7 @@
                         <form action="{{ route('transaksi-store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="hidden" name="total_bayar" value="{{ $pesanan->sum('sub_total') }}">
+                                <input type="hidden" name="total_bayar" value="{{ $total->sum('sub_total') }}">
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Pelanggan : </label>

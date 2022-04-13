@@ -29,7 +29,8 @@
                                         <tr>
                                             <td>{{ $dt->name }}</td>
                                             <td>{{ $dt->description }}</td>
-                                            <td>{{ date('H:i:s', strtotime($dt->tgl_activity)) }}</td>
+                                            <td>{{ date('d-M-Y, H:i:s', strtotime($dt->tgl_activity)) }}</td>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

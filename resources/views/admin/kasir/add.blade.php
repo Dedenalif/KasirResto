@@ -14,7 +14,8 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off">
+                                id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off"
+                                value="{{ old('name') }}">
                             @error('name')
                                 <div class="invalid-feedback">* {{ $errors->first('name') }}</div>
                             @enderror
@@ -22,7 +23,7 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Email</label>
                             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                                id="exampleInputPassword1" autocomplete="off">
+                                id="exampleInputPassword1" autocomplete="off" value="{{ old('email') }}">
                             @error('email')
                                 <div class="invalid-feedback">* {{ $errors->first('email') }}</div>
                             @enderror
@@ -42,15 +43,15 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">No HP</label>
                             <input type="number" name="no_hp" class="form-control @error('no_hp') is-invalid @enderror"
-                                id="exampleInputPassword1">
+                                id="exampleInputPassword1" value="{{ old('no_hp') }}">
                             @error('no_hp')
                                 <div class="invalid-feedback">* {{ $errors->first('no_hp') }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Alamat</label>
-                            <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat"
-                                id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="exampleFormControlTextarea1"
+                                rows="3">{{ old('alamat') }}</textarea>
                             @error('alamat')
                                 <div class="invalid-feedback">* {{ $errors->first('alamat') }}</div>
                             @enderror
